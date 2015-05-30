@@ -36,16 +36,16 @@ for($id = 1; $i <= $MAX_ID; $id++)
 // // Write out to the sqlite database using scraperwiki library
  scraperwiki::save_sqlite(array('mci_snum','registration_number'), 
     array('mci_snum' => $id, 
-          'name' => sqlite_escape_string(trim($info['doc_name'])), 
-          'fathers_name' => sqlite_escape_string(trim($info['doc_fname'])),
-          'date_of_birth' => sqlite_escape_string(trim($info['doc_dob'])),
-          'information_year' => sqlite_escape_string(trim($info['doc_infoyear'])),
-          'registration_number' => sqlite_escape_string(trim($info['doc_regnum'])),
-          'date_of_reg' => sqlite_escape_string(trim($info['doc_datereg'])),
-          'council' => sqlite_escape_string(trim($info['doc_council'])),
-          'qualifications' => sqlite_escape_string(trim($info['doc_qual'])),
-          'qualification_year' => sqlite_escape_string(trim($info['doc_qualyear'])),
-          'permanent_address' => sqlite_escape_string(trim($info['doc_address']))
+          'name' => add_slashes(trim($info['doc_name'])), 
+          'fathers_name' => add_slashes(trim($info['doc_fname'])),
+          'date_of_birth' => add_slashes(trim($info['doc_dob'])),
+          'information_year' => add_slashes(trim($info['doc_infoyear'])),
+          'registration_number' => add_slashes(trim($info['doc_regnum'])),
+          'date_of_reg' => add_slashes(trim($info['doc_datereg'])),
+          'council' => add_slashes(trim($info['doc_council'])),
+          'qualifications' => add_slashes(trim($info['doc_qual'])),
+          'qualification_year' => add_slashes(trim($info['doc_qualyear'])),
+          'permanent_address' => add_slashes(trim($info['doc_address']))
     ), "indian_doctors");
     
   //clean out the dom
